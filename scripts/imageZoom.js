@@ -1,15 +1,11 @@
-window.onload = () => {
-    var smallImages = document.querySelectorAll(".small-image");
+document.addEventListener("DOMContentLoaded", function () {
+  var bigImage = document.querySelector(".big-image");
 
-    smallImages.forEach(function(image) {
-      image.addEventListener("mouseover", function() {
-        var preview = document.getElementById("preview");
-        preview.src = image.getAttribute("data-preview");
-      });
-    
-      image.addEventListener("mouseout", function() {
-        var preview = document.getElementById("preview");
-        preview.src = "images/defaultImage.jpg";
-      });
-    });
-}
+  bigImage.addEventListener("mouseover", function () {
+      this.classList.add("zoomed");
+  });
+
+  bigImage.addEventListener("mouseout", function () {
+      this.classList.remove("zoomed");
+  });
+});
